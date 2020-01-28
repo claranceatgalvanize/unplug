@@ -1,6 +1,21 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import {
+  MatInputModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSortModule,
+  MatTableModule,
+  MatIconModule,
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatMenuModule,
+  MatToolbarModule
+} from "@angular/material";
 
 import { TokenInterceptor } from "./interceptors/token-interceptor";
 import { AppRoutingModule } from "./app-routing.module";
@@ -19,6 +34,7 @@ import { PostComponent } from "./post/post.component";
 import { PostDetailsComponent } from "./post/post-details/post-details.component";
 import { PostAddComponent } from "./post/post-add/post-add.component";
 import { PostEditComponent } from "./post/post-edit/post-edit.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -36,11 +52,27 @@ import { PostEditComponent } from "./post/post-edit/post-edit.component";
     PostComponent,
     PostDetailsComponent,
     PostAddComponent,
-    PostEditComponent,
-    PostDetailsComponent,
-    CategoryEditComponent
+    PostEditComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatMenuModule,
+    MatToolbarModule
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
