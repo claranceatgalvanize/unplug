@@ -1,24 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { HomeComponent } from './home/home.component';
-import { AdminComponent } from './admin/admin.component';
-import { BycategoryComponent } from './bycategory/bycategory.component';
-import { DetailsComponent } from './details/details.component';
-import { CategoryComponent } from './category/category.component';
-import { CategoryDetailsComponent } from './category/category-details/category-details.component';
-import { CategoryAddComponent } from './category/category-add/category-add.component';
-import { EditComponent } from './category/edit/edit.component';
-import { PostComponent } from './post/post.component';
-import { PostDetialsComponent } from './post/post-detials/post-detials.component';
-import { PostAddComponent } from './post/post-add/post-add.component';
-import { PostEditComponent } from './post/post-edit/post-edit.component';
-import { PostDetailsComponent } from './post/post-details/post-details.component';
-import { CategoryEditComponent } from './category/category-edit/category-edit.component';
+import { TokenInterceptor } from "./interceptors/token-interceptor";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { LoginComponent } from "./auth/login/login.component";
+import { RegisterComponent } from "./auth/register/register.component";
+import { HomeComponent } from "./home/home.component";
+import { AdminComponent } from "./admin/admin.component";
+import { BycategoryComponent } from "./bycategory/bycategory.component";
+import { DetailsComponent } from "./details/details.component";
+import { CategoryComponent } from "./category/category.component";
+import { CategoryDetailsComponent } from "./category/category-details/category-details.component";
+import { CategoryAddComponent } from "./category/category-add/category-add.component";
+import { CategoryEditComponent } from "./category/category-edit/category-edit.component";
+import { PostComponent } from "./post/post.component";
+import { PostDetailsComponent } from "./post/post-details/post-details.component";
+import { PostAddComponent } from "./post/post-add/post-add.component";
+import { PostEditComponent } from "./post/post-edit/post-edit.component";
 
 @NgModule({
   declarations: [
@@ -32,19 +32,22 @@ import { CategoryEditComponent } from './category/category-edit/category-edit.co
     CategoryComponent,
     CategoryDetailsComponent,
     CategoryAddComponent,
-    EditComponent,
+    CategoryEditComponent,
     PostComponent,
-    PostDetialsComponent,
+    PostDetailsComponent,
     PostAddComponent,
     PostEditComponent,
     PostDetailsComponent,
     CategoryEditComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
