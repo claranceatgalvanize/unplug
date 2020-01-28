@@ -17,6 +17,8 @@ import { PostComponent } from './post/post.component';
 import { PostDetialsComponent } from './post/post-detials/post-detials.component';
 import { PostAddComponent } from './post/post-add/post-add.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
+import { PostDetailsComponent } from './post/post-details/post-details.component';
+import { CategoryEditComponent } from './category/category-edit/category-edit.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { PostEditComponent } from './post/post-edit/post-edit.component';
     PostComponent,
     PostDetialsComponent,
     PostAddComponent,
-    PostEditComponent
+    PostEditComponent,
+    PostDetailsComponent,
+    CategoryEditComponent
   ],
   imports: [
     BrowserModule,
