@@ -1,6 +1,5 @@
 const passport = require("passport"),
   express = require("express"),
-  jwt = require("jsonwebtoken"),
   router = express.Router(),
   Category = require("../models/category");
 require("../config/passport")(passport);
