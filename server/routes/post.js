@@ -1,7 +1,7 @@
 const passport = require("passport"),
   express = require("express"),
   router = express.Router(),
-  Post = require("../models/category");
+  Post = require("../models/post");
 require("../config/passport")(passport);
 
 router.get(

@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+var Category = require("../models/category");
+var Post = require("../models/post");
 
 router.get("/category", (req, res, next) => {
   Category.find((err, categories) => {
