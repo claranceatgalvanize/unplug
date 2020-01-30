@@ -16,7 +16,10 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatMenuModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatGridListModule
 } from "@angular/material";
 
 import { TokenInterceptor } from "./interceptors/token-interceptor";
@@ -74,6 +77,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     MatFormFieldModule,
     MatMenuModule,
     MatToolbarModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatGridListModule,
     CKEditorModule,
     MatContenteditableModule
   ],
