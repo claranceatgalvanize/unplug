@@ -6,7 +6,7 @@
       <button
         mat-menu-item
         *ngFor="let cat of categories"
-        [routerLink]="['/bycategory/', cat._id]"
+        [routerLink]="['/bycategory/', cat.id]"
       >
         {{ cat.catName }}
       </button>
