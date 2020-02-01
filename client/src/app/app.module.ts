@@ -4,9 +4,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CKEditorModule } from "ckeditor4-angular";
 import { MatContenteditableModule } from "mat-contenteditable";
+import { MatInputModule } from "@angular/material/input";
 
 import {
-  MatInputModule,
   MatPaginatorModule,
   MatProgressSpinnerModule,
   MatSortModule,
@@ -93,6 +93,3 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
   bootstrap: [AppComponent]
 })
 export class AppModule {}
-
-//     "@ckeditor/ckeditor5-alignment": "^11.0.0",
-// "@ckeditor/ckeditor5-angular": "^1.0.1",

@@ -8,7 +8,7 @@ import { CategoryService } from "../services/category.service";
   styleUrls: ["./category.component.scss"]
 })
 export class CategoryComponent implements OnInit {
-  displayedColumns: string[] = ["catName", "catDec"];
+  displayedColumns: string[] = ["catName", "catDesc"];
   data: Category[] = [];
   isLoadingResults = true;
 

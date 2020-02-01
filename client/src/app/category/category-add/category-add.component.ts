@@ -12,60 +12,50 @@ import {
 import { ErrorStateMatcher } from "@angular/material/core";
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(
-    control: FormControl | null,
-    form: FormGroupDirective | NgForm | null
-  ): boolean {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
-    return !!(
-      control &&
-      control.invalid &&
-      (control.dirty || control.touched || isSubmitted)
-    );
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
 
 @Component({
-  selector: "app-category-add",
-  templateUrl: "./category-add.component.html",
-  styleUrls: ["./category-add.component.scss"]
+  selector: 'app-category-add',
+  templateUrl: './category-add.component.html',
+  styleUrls: ['./category-add.component.scss']
 })
 export class CategoryAddComponent implements OnInit {
+
   categoryForm: FormGroup;
-  catName = "";
-  catDesc = "";
-  catImgUrl = "";
-  catContent = "";
+  catName = '';
+  catDesc = '';
+  catImgUrl = '';
+  catContent = '';
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
 
-  constructor(
-    private router: Router,
-    private api: CategoryService,
-    private formBuilder: FormBuilder
-  ) {}
+  constructor(private router: Router, private api: CategoryService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.categoryForm = this.formBuilder.group({
-      catName: [null, Validators.required],
-      catDesc: [null, Validators.required],
-      catImgUrl: [null, Validators.required],
-      catContent: [null, Validators.required]
+      catName : [null, Validators.required],
+      catDesc : [null, Validators.required],
+      catImgUrl : [null, Validators.required],
+      catContent : [null, Validators.required]
     });
   }
 
   onFormSubmit() {
     this.isLoadingResults = true;
-    this.api.addCategory(this.categoryForm.value).subscribe(
-      (res: any) => {
-        const id = res._id;
-        this.isLoadingResults = false;
-        this.router.navigate(["/category-details", id]);
-      },
-      (err: any) => {
-        console.log(err);
-        this.isLoadingResults = false;
-      }
-    );
+    this.api.addCategory(this.categoryForm.value)
+      .subscribe((res: any) => {
+          const id = res._id;
+          this.isLoadingResults = false;
+          this.router.navigate(['/category/details', id]);
+        }, (err: any) => {
+          console.log(err);
+          this.isLoadingResults = false;
+        });
   }
+
 }
+

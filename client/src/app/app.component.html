@@ -1,12 +1,35 @@
 <mat-toolbar>
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <div class="nav">
+    <img
+      src="../assets/brand/unplug-full-color.svg"
+      alt="brand"
+      [routerLink]="['']"
+      class="brand"
+    />
+    <div class="space"></div>
+    <div>
+      <button mat-button [routerLink]="['/']">Home</button>
+      <button
+        mat-button
+        [routerLink]="['/login']"
+        *ngIf="loginStatus === false"
+      >
+        Sign In
+      </button>
+      <button mat-button (click)="logout()" *ngIf="loginStatus === true">
+        Logout
+      </button>
+    </div>
+    <button mat-button *ngIf="loginStatus === true" [matMenuTriggerFor]="menu">
+      Menu
+    </button>
+  </div>
   <mat-menu #menu="matMenu">
     <div *ngIf="loginStatus === false">
-      <button mat-menu-item [routerLink]="['/']">Home</button>
       <button
         mat-menu-item
         *ngFor="let cat of categories"
-        [routerLink]="['/bycategory/', cat.id]"
+        [routerLink]="['/bycategory/', cat._id]"
       >
         {{ cat.catName }}
       </button>
@@ -15,7 +38,6 @@
       <button mat-menu-item [routerLink]="['/admin']">Home</button>
       <button mat-menu-item [routerLink]="['/category']">Category</button>
       <button mat-menu-item [routerLink]="['/post']">Post</button>
-      <button mat-menu-item (click)="logout()">Logout</button>
     </div>
   </mat-menu>
 </mat-toolbar>

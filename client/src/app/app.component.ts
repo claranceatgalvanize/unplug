@@ -10,7 +10,7 @@ import { AuthService } from "./services/auth.service";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-  title = "client";
+  displayedColums: string[] = ["catName", "catDec"];
   categories: Category[] = [];
   loginStatus = false;
 

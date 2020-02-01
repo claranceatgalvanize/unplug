@@ -4,15 +4,16 @@ import { Post } from "../models/post";
 import { HomeService } from "../services/home.service";
 
 @Component({
-  selector: "app-bycategory",
-  templateUrl: "./bycategory.component.html",
-  styleUrls: ["./bycategory.component.scss"]
+  selector: 'app-bycategory',
+  templateUrl: './bycategory.component.html',
+  styleUrls: ['./bycategory.component.scss']
 })
 export class BycategoryComponent implements OnInit {
+
   posts: Post[] = [];
   isLoadingResults = true;
 
-  constructor(private route: ActivatedRoute, private api: HomeService) {}
+  constructor(private route: ActivatedRoute, private api: HomeService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -22,16 +23,15 @@ export class BycategoryComponent implements OnInit {
 
   getPostsByCategory(id: any) {
     this.posts = [];
-    this.api.getPostsByCategory(id).subscribe(
-      (res: any) => {
+    this.api.getPostsByCategory(id)
+      .subscribe((res: any) => {
         this.posts = res;
         console.log(this.posts);
         this.isLoadingResults = false;
-      },
-      err => {
+      }, err => {
         console.log(err);
         this.isLoadingResults = false;
-      }
-    );
+      });
   }
+
 }

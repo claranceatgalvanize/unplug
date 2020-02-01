@@ -1,0 +1,32 @@
+:host form {
+  width: 30%;
+  font-size: 18px;
+}
+
+:host form button {
+  font-size: 18px;
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+}
+:host .register {
+  background: #5921e5;
+  color: #fff;
+}
+
+.horizontalline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  height: 80vh;
+}
+.example-card,
+.mat-elevation-z8 {
+  box-shadow: none;
+}
