@@ -13,20 +13,3 @@
   background: #5921e5;
   color: #fff;
 }
-
-.horizontalline {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.example-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: none;
-  height: 80vh;
-}
-.example-card,
-.mat-elevation-z8 {
-  box-shadow: none;
-}

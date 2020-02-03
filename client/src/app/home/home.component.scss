@@ -1,0 +1,89 @@
+$border: 0 0 0px 1px #0000001f;
+$gray: #a9a9a9;
+$paddingValue: 15px 35px;
+
+.main-wrapper {
+  padding: 35px 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.loading-shade {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.unpcard-wrapper {
+  padding: 0 35px;
+  flex: 1;
+}
+
+.unpcard {
+  line-height: 2.2em;
+  box-shadow: $border;
+  border-radius: 15px;
+  margin-bottom: 35px;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .unpcard-header {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .unpcard-content {
+    padding: $paddingValue;
+
+    h3 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.2em;
+      color: $gray;
+    }
+    small {
+      color: $gray;
+      font-weight: 500;
+      font-size: 0.8em;
+    }
+  }
+
+  .unpcard-action {
+    box-shadow: $border;
+    padding: $paddingValue;
+    display: flex;
+    justify-content: space-between;
+
+    i {
+      color: $gray;
+      &:hover {
+        color: #5921e5;
+      }
+      &:active {
+        color: $gray;
+      }
+    }
+  }
+}
+
+.left-side-bar {
+  // box-shadow: $border;
+  width: 200px;
+}
+
+.right-side-bar {
+  // box-shadow: $border;
+  width: 300px;
+}

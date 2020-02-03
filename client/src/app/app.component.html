@@ -1,44 +1,67 @@
-<mat-toolbar>
-  <div class="nav">
-    <img
-      src="../assets/brand/unplug-full-color.svg"
-      alt="brand"
-      [routerLink]="['']"
-      class="brand"
-    />
-    <div class="space"></div>
-    <div>
-      <button mat-button [routerLink]="['/']">Home</button>
+<header>
+  <div class="margin">
+    <!-- <mat-toolbar> -->
+    <div class="nav">
+      <img
+        src="../assets/brand/unplug-full-color.svg"
+        alt="brand"
+        [routerLink]="['']"
+        class="brand"
+      />
+      <div class="space"></div>
+      <div>
+        <button mat-button appearance="outline" [routerLink]="['/']">
+          <i class="fas fa-home"></i>
+        </button>
+        <button
+          mat-button
+          appearance="outline"
+          [routerLink]="['/login']"
+          *ngIf="loginStatus === false"
+        >
+          <i class="fas fa-sign-in-alt"></i>
+        </button>
+        <button
+          mat-button
+          appearance="outline"
+          (click)="logout()"
+          *ngIf="loginStatus === true"
+        >
+          Logout
+        </button>
+      </div>
       <button
         mat-button
-        [routerLink]="['/login']"
-        *ngIf="loginStatus === false"
+        *ngIf="loginStatus === true"
+        [matMenuTriggerFor]="menu"
       >
-        Sign In
-      </button>
-      <button mat-button (click)="logout()" *ngIf="loginStatus === true">
-        Logout
+        Menu
       </button>
     </div>
-    <button mat-button *ngIf="loginStatus === true" [matMenuTriggerFor]="menu">
-      Menu
-    </button>
+    <mat-menu #menu="matMenu">
+      <div *ngIf="loginStatus === false">
+        <button
+          mat-menu-item
+          *ngFor="let cat of categories"
+          [routerLink]="['/bycategory/', cat._id]"
+        >
+          {{ cat.catName }}
+        </button>
+      </div>
+      <div *ngIf="loginStatus === true">
+        <button mat-menu-item [routerLink]="['/admin']">Home</button>
+        <button mat-menu-item [routerLink]="['/category']">Category</button>
+        <button mat-menu-item [routerLink]="['/post']">Post</button>
+      </div>
+    </mat-menu>
+    <!-- </mat-toolbar> -->
   </div>
-  <mat-menu #menu="matMenu">
-    <div *ngIf="loginStatus === false">
-      <button
-        mat-menu-item
-        *ngFor="let cat of categories"
-        [routerLink]="['/bycategory/', cat._id]"
-      >
-        {{ cat.catName }}
-      </button>
-    </div>
-    <div *ngIf="loginStatus === true">
-      <button mat-menu-item [routerLink]="['/admin']">Home</button>
-      <button mat-menu-item [routerLink]="['/category']">Category</button>
-      <button mat-menu-item [routerLink]="['/post']">Post</button>
-    </div>
-  </mat-menu>
-</mat-toolbar>
-<router-outlet></router-outlet>
+</header>
+<main>
+  <div class="margin">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+<footer>
+  <div class="margin"></div>
+</footer>

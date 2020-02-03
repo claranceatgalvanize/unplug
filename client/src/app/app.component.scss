@@ -1,17 +1,46 @@
-.nav {
+$border: 0 0 0px 1px #0000000e;
+
+:host {
+  .margin {
+    padding: 0 100px;
+  }
+
+  header {
+    box-shadow: $border;
+  }
+}
+
+:host .nav {
   display: flex;
   width: 100%;
-  padding: 0 100px;
-}
+  justify-content: space-between;
+  padding: 15px 0px;
 
-.space {
-  flex: 1;
-}
+  .space {
+    flex: 1;
+  }
+  .brand {
+    width: 100px;
+    &:focus {
+      outline: none;
+    }
+  }
 
-.brand {
-  width: 100px;
-}
+  button {
+    box-shadow: $border;
+    margin-left: 15px;
 
-.brand:focus {
-  outline: none;
+    i {
+      color: #5921e5;
+    }
+
+    &:hover {
+      color: #fff;
+      background: #5921e5;
+
+      i {
+        color: #fff;
+      }
+    }
+  }
 }
