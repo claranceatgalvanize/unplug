@@ -1,0 +1,44 @@
+$border: 0 0 0px 1px #0000000e;
+
+.post-wrapper {
+  padding: 0 35px;
+  width: 50vw;
+}
+
+.mat-expansion-panel {
+  box-shadow: $border;
+  h3,
+  p {
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+  p {
+    color: #ccc;
+  }
+  .mat-expansion-panel-header {
+    padding: 15px 35px;
+  }
+}
+
+.add-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+
+  h3 {
+    font-size: 2em;
+    font-weight: 700;
+  }
+}
+
+.mat-icon {
+  padding: 15px;
+  box-shadow: $border;
+  border-radius: 50px;
+
+  &:hover {
+    background: #5921e5;
+    color: #fff;
+  }
+}

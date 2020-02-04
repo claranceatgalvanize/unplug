@@ -11,6 +11,7 @@ export class PostComponent implements OnInit {
   displayedColumns: string[] = ["postTitle", "postDesc"];
   data: Post[] = [];
   isLoadingResults = true;
+  panelOpenState = false;
 
   constructor(private api: PostService) {}
 
