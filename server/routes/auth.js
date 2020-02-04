@@ -7,7 +7,6 @@ const passport = require("passport"),
 require("../config/passport")(passport);
 
 router.post("/register", (req, res) => {
-  console.log(fullName, username, password);
   if (!req.body.fullName || !req.body.username || !req.body.password) {
     res.json({
       success: false,
@@ -41,7 +40,10 @@ router.post("/login", (req, res) => {
       user.comparePassword(req.body.password, (err, isMatch) => {
         if (isMatch && !err) {
           const token = jwt.sign(user.toJSON(), config.secret);
-          res.json({ success: true, token: `JWT ${token}` });
+          res.json({
+            success: true,
+            token: `JWT ${token}`
+          });
         } else {
           res.status(401).send({
             success: false,
