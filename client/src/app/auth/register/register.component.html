@@ -1,77 +1,70 @@
-<div class="example-container mat-elevation-z8">
-  <div class="example-loading-shade" *ngIf="isLoadingResults">
-    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-  </div>
-  <mat-card class="example-card">
-    <form
-      [formGroup]="registerForm"
-      (ngSubmit)="onFormSubmit(registerForm.value)"
-    >
-      <h1>Get onboard</h1>
-      <mat-form-field appearance="outline" class="example-full-width">
-        <mat-label>Full Name</mat-label>
-        <input
-          matInput
-          type="fullName"
-          formControlName="fullName"
-          [errorStateMatcher]="matcher"
-        />
-        <mat-error>
-          <span
-            *ngIf="
-              !registerForm.get('fullName').valid &&
-              registerForm.get('fullName').touched
-            "
-            >Please enter your Full Name</span
-          >
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input
-          matInput
-          type="email"
-          formControlName="username"
-          [errorStateMatcher]="matcher"
-        />
-        <mat-error>
-          <span
-            *ngIf="
-              !registerForm.get('username').valid &&
-              registerForm.get('username').touched
-            "
-            >Please enter your username</span
-          >
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="example-full-width">
-        <mat-label>Password</mat-label>
-        <input
-          matInput
-          type="password"
-          formControlName="password"
-          [errorStateMatcher]="matcher"
-        />
-        <mat-error>
-          <span
-            *ngIf="
-              !registerForm.get('password').valid &&
-              registerForm.get('password').touched
-            "
-            >Please enter your password</span
-          >
-        </mat-error>
-      </mat-form-field>
-      <div class="button-row">
-        <button
-          type="submit"
-          [disabled]="!registerForm.valid"
-          mat-flat-button
-          color="primary"
+<div class="form-wrapper">
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="onFormSubmit(registerForm.value)"
+  >
+    <h3>To get started, enter your full name, email, and password.</h3>
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Full Name</mat-label>
+      <input
+        matInput
+        type="fullName"
+        formControlName="fullName"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error>
+        <span
+          *ngIf="
+            !registerForm.get('fullName').valid &&
+            registerForm.get('fullName').touched
+          "
+          >Please enter your Full Name</span
         >
-          Register
-        </button>
-      </div>
-    </form>
-  </mat-card>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="username"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error>
+        <span
+          *ngIf="
+            !registerForm.get('username').valid &&
+            registerForm.get('username').touched
+          "
+          >Please enter your username</span
+        >
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error>
+        <span
+          *ngIf="
+            !registerForm.get('password').valid &&
+            registerForm.get('password').touched
+          "
+          >Please enter your password</span
+        >
+      </mat-error>
+    </mat-form-field>
+    <button
+      type="submit"
+      [disabled]="!registerForm.valid"
+      mat-flat-button
+      color="primary"
+    >
+      Register
+    </button>
+  </form>
 </div>

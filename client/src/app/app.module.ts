@@ -4,9 +4,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CKEditorModule } from "ckeditor4-angular";
 import { MatContenteditableModule } from "mat-contenteditable";
-import { MatInputModule } from "@angular/material/input";
 
 import {
+  MatInputModule,
   MatPaginatorModule,
   MatProgressSpinnerModule,
   MatSortModule,
@@ -19,7 +19,9 @@ import {
   MatToolbarModule,
   MatSelectModule,
   MatOptionModule,
-  MatGridListModule
+  MatGridListModule,
+  MatExpansionModule,
+  MatListModule
 } from "@angular/material";
 
 import { TokenInterceptor } from "./interceptors/token-interceptor";
@@ -40,6 +42,8 @@ import { PostDetailsComponent } from "./post/post-details/post-details.component
 import { PostAddComponent } from "./post/post-add/post-add.component";
 import { PostEditComponent } from "./post/post-edit/post-edit.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { SideNavComponent } from "./home/side-nav/side-nav.component";
+import { FeatureComponent } from './home/feature/feature.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     PostComponent,
     PostDetailsComponent,
     PostAddComponent,
-    PostEditComponent
+    PostEditComponent,
+    SideNavComponent,
+    FeatureComponent
   ],
   imports: [
     BrowserModule,
@@ -80,6 +86,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     MatSelectModule,
     MatOptionModule,
     MatGridListModule,
+    MatExpansionModule,
+    MatListModule,
     CKEditorModule,
     MatContenteditableModule
   ],

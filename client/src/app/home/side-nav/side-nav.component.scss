@@ -1,0 +1,14 @@
+$border: 0 0 0px 1px #0000000e;
+$gray: #a9a9a9;
+$paddingValue: 15px 35px;
+
+:host .mat-expansion-panel {
+  box-shadow: $border;
+  border-radius: 0px;
+
+  .mat-expansion-panel-header .mat-panel-title,
+  .mat-list .mat-list-item {
+    font-weight: 500;
+    color: $gray;
+  }
+}

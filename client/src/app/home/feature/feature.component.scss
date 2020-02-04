@@ -1,0 +1,89 @@
+$border: 0 0 0px 1px #0000001f;
+$gray: #a9a9a9;
+$paddingValue: 5px 25px;
+
+.profile-wrapper {
+  line-height: 1.5em;
+  width: 100%;
+  background: #fff;
+  box-shadow: $border;
+  text-align: center;
+
+  small {
+    color: $gray;
+  }
+
+  a {
+    color: #000;
+    &:hover {
+      color: #5921e5;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.banner {
+  padding: $paddingValue;
+  box-shadow: $border;
+}
+
+.header,
+.social-links,
+.follow {
+  display: flex;
+  justify-content: center;
+}
+
+.bio {
+  padding: 0 0px 25px 0px;
+}
+
+.header {
+  padding: 25px;
+  .graphic {
+    width: 50px;
+    height: 50px;
+    box-shadow: $border;
+    border-radius: 50px;
+    margin-right: 15px;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+    }
+
+    .username span,
+    small {
+      text-align: left;
+    }
+  }
+}
+
+.follow span {
+  padding: 15px;
+  text-align: center;
+  box-shadow: $border;
+  width: 50%;
+}
+
+.social-links span {
+  padding: 15px;
+  box-shadow: $border;
+  text-align: center;
+  width: 25%;
+}
+
+.action {
+  padding: 15px;
+
+  button {
+    width: 100%;
+    font-size: 1em;
+    box-shadow: $border;
+    background: none;
+    border: none;
+  }
+}

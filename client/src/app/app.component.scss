@@ -1,46 +1,72 @@
 $border: 0 0 0px 1px #0000000e;
+$gray: #a9a9a9;
+$paddingValue: 15px 35px;
 
 :host {
+  main {
+    padding: 35px 0;
+  }
+
+  .main-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
   .margin {
     padding: 0 100px;
   }
 
   header {
     box-shadow: $border;
-  }
-}
 
-:host .nav {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 15px 0px;
+    .nav {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 15px 0px;
 
-  .space {
-    flex: 1;
-  }
-  .brand {
-    width: 100px;
-    &:focus {
-      outline: none;
-    }
-  }
+      .space {
+        flex: 1;
+      }
+      .brand {
+        width: 100px;
+        &:focus {
+          outline: none;
+        }
+      }
 
-  button {
-    box-shadow: $border;
-    margin-left: 15px;
+      button {
+        box-shadow: $border;
+        margin-left: 15px;
 
-    i {
-      color: #5921e5;
-    }
+        i {
+          color: #5921e5;
+        }
 
-    &:hover {
-      color: #fff;
-      background: #5921e5;
+        &:hover {
+          color: #fff;
+          background: #5921e5;
 
-      i {
-        color: #fff;
+          i {
+            color: #fff;
+          }
+        }
       }
     }
+  }
+
+  .left-side-bar {
+    width: 20vw;
+
+    button {
+      background: #5921e5;
+      color: #fff;
+      width: 100%;
+      padding: 8px 0;
+    }
+  }
+
+  .right-side-bar {
+    width: 30vw;
   }
 }

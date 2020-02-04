@@ -2,13 +2,6 @@ $border: 0 0 0px 1px #0000001f;
 $gray: #a9a9a9;
 $paddingValue: 15px 35px;
 
-.main-wrapper {
-  padding: 35px 0;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-}
-
 .loading-shade {
   position: absolute;
   height: 100%;
@@ -21,13 +14,13 @@ $paddingValue: 15px 35px;
 
 .unpcard-wrapper {
   padding: 0 35px;
-  flex: 1;
+  width: 50vw;
 }
 
 .unpcard {
   line-height: 2.2em;
   box-shadow: $border;
-  border-radius: 15px;
+  border-radius: 0px;
   margin-bottom: 35px;
   overflow: hidden;
 
@@ -48,6 +41,7 @@ $paddingValue: 15px 35px;
 
     h3 {
       font-size: 2em;
+      font-weight: 700;
     }
     p {
       font-size: 1.2em;
@@ -68,6 +62,7 @@ $paddingValue: 15px 35px;
 
     i {
       color: $gray;
+      font-size: 1.2em;
       &:hover {
         color: #5921e5;
       }
@@ -76,14 +71,4 @@ $paddingValue: 15px 35px;
       }
     }
   }
-}
-
-.left-side-bar {
-  // box-shadow: $border;
-  width: 200px;
-}
-
-.right-side-bar {
-  // box-shadow: $border;
-  width: 300px;
 }

@@ -1,6 +1,5 @@
 <header>
   <div class="margin">
-    <!-- <mat-toolbar> -->
     <div class="nav">
       <img
         src="../assets/brand/unplug-full-color.svg"
@@ -20,14 +19,6 @@
           *ngIf="loginStatus === false"
         >
           <i class="fas fa-sign-in-alt"></i>
-        </button>
-        <button
-          mat-button
-          appearance="outline"
-          (click)="logout()"
-          *ngIf="loginStatus === true"
-        >
-          Logout
         </button>
       </div>
       <button
@@ -49,17 +40,24 @@
         </button>
       </div>
       <div *ngIf="loginStatus === true">
-        <button mat-menu-item [routerLink]="['/admin']">Home</button>
         <button mat-menu-item [routerLink]="['/category']">Category</button>
         <button mat-menu-item [routerLink]="['/post']">Post</button>
       </div>
     </mat-menu>
-    <!-- </mat-toolbar> -->
   </div>
 </header>
 <main>
-  <div class="margin">
+  <div class="margin main-wrapper">
+    <div *ngIf="loginStatus === true" class="left-side-bar">
+      <app-side-nav></app-side-nav>
+      <button mat-button appearance="outline" (click)="logout()">
+        Logout
+      </button>
+    </div>
     <router-outlet></router-outlet>
+    <div *ngIf="loginStatus === true" class="right-side-bar">
+      <app-feature></app-feature>
+    </div>
   </div>
 </main>
 <footer>

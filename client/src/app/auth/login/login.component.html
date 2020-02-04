@@ -1,68 +1,62 @@
-<div class="example-container">
-  <div class="example-loading-shade" *ngIf="isLoadingResults">
-    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-  </div>
-  <mat-card class="example-card">
-    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)">
-      <h1>Sign in to your account</h1>
-      <p>
-        <small
-          >Enter your email and password or click register<br />
-          to create a new account, can't wait to have you onboard.
-        </small>
-      </p>
-      <mat-form-field appearance="outline" class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input
-          matInput
-          type="email"
-          formControlName="username"
-          [errorStateMatcher]="matcher"
-        />
-        <mat-error>
-          <span
-            *ngIf="
-              !loginForm.get('username').valid &&
-              loginForm.get('username').touched
-            "
-            >Please enter your username</span
-          >
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="example-full-width">
-        <mat-label>Password</mat-label>
-        <input
-          matInput
-          type="password"
-          formControlName="password"
-          [errorStateMatcher]="matcher"
-        />
-        <mat-error>
-          <span
-            *ngIf="
-              !loginForm.get('password').valid &&
-              loginForm.get('password').touched
-            "
-          >
-            Please enter your password
-          </span>
-        </mat-error>
-      </mat-form-field>
-      <div class="button-row">
-        <button type="submit" [disabled]="!loginForm.valid" mat-stroked-button>
-          Login
-        </button>
-      </div>
-      <div class="button-row">
-        <button
-          class="register"
-          mat-stroked-button
-          type="button"
-          (click)="register()"
+<div class="form-wrapper">
+  <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)">
+    <h3>
+      Enter your email and password or create a new account.
+    </h3>
+    <mat-form-field appearance="outline" class="top-m example-full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="username"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error>
+        <span
+          *ngIf="
+            !loginForm.get('username').valid &&
+            loginForm.get('username').touched
+          "
+          >Please enter your username</span
         >
-          Register
-        </button>
-      </div>
-    </form>
-  </mat-card>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error>
+        <span
+          *ngIf="
+            !loginForm.get('password').valid &&
+            loginForm.get('password').touched
+          "
+        >
+          Please enter your password
+        </span>
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      type="submit"
+      [disabled]="!loginForm.valid"
+      class="login"
+      mat-stroked-button
+    >
+      Login
+    </button>
+
+    <button
+      class="register"
+      mat-stroked-button
+      type="button"
+      (click)="register()"
+    >
+      Register
+    </button>
+  </form>
 </div>

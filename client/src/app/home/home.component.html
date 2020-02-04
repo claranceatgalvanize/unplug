@@ -2,16 +2,15 @@
   <span *ngIf="isLoadingResults" class="loading-shade">
     <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
   </span>
-  <div class="left-side-bar"></div>
   <div class="unpcard-wrapper">
     <div class="unpcard" *ngFor="let post of posts">
       <div class="unpcard-header">
         <img src="{{ post.postImgUrl }}" alt="Photo of a Shiba Inu" />
       </div>
       <div class="unpcard-content">
-        <small>{{ post.updated | date }}</small>
+        <small>Published: {{ post.updated | date }}</small>
         <h3>{{ post.postTitle }}</h3>
-        <p>BY: {{ post.postAuthor }}</p>
+        <p>Author: {{ post.postAuthor }}</p>
       </div>
       <div class="unpcard-action">
         <i class="fas fa-heart"></i>
@@ -19,7 +18,4 @@
       </div>
     </div>
   </div>
-  <div class="right-side-bar"></div>
 </div>
-
-<!-- *ngIf="isLoadingResults" -->
