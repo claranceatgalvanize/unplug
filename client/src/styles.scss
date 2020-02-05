@@ -5,6 +5,8 @@ $border: 0 0 0px 1px #0000000e;
 .mat-expansion-panel,
 .mat-form-field-outline-start,
 .mat-form-field-outline-end,
-.mat-button {
+.mat-button,
+.mat-card {
   border-radius: 0px !important;
+  padding: 0 !important;
 }

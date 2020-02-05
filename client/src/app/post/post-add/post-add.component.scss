@@ -1,0 +1,61 @@
+.post-add-wrapper {
+  padding: 0 35px;
+  width: 50vw;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .form-header {
+    padding: 0 0 25px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    h3 {
+      font-size: 2em;
+      font-weight: 700;
+    }
+
+    p {
+      font-weight: 700;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        color: #5921e5;
+      }
+    }
+  }
+
+  .mat-form-field,
+  .title-disc,
+  .ref-url,
+  .form-header {
+    width: 100%;
+  }
+
+  .title-disc,
+  .ref-url {
+    display: flex;
+    justify-content: space-between;
+
+    .space {
+      width: 3.5em;
+    }
+  }
+
+  button {
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 22px;
+    background: #5921e5 !important;
+    color: #fff !important;
+    border-radius: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+}
