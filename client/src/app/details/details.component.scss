@@ -1,0 +1,39 @@
+$border: 0 0 0px 1px #0000000e;
+
+.details-wrapper {
+  padding: 0 35px;
+  width: 50vw;
+  img {
+    width: 100%;
+  }
+  .mat-card {
+    box-shadow: $border;
+
+    &:focus {
+      outline: none;
+    }
+
+    .mat-card-header {
+      align-items: baseline;
+      h4,
+      p {
+        font-weight: 700;
+      }
+      p {
+        margin-left: 35px;
+      }
+      span {
+        font-size: 0.5em;
+        color: #aaa;
+      }
+    }
+
+    .margin {
+      padding: 35px;
+      overflow: hidden;
+      .mat-card-content > img * {
+        width: 100%;
+      }
+    }
+  }
+}

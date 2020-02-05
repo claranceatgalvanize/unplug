@@ -24,6 +24,21 @@ $border: 0 0 0px 1px #0000000e;
   box-shadow: none;
   box-shadow: $border;
 
+  .mat-card-header {
+    align-items: baseline;
+    h4,
+    p {
+      font-weight: 700;
+    }
+    p {
+      margin-left: 35px;
+    }
+    span {
+      font-size: 0.5em;
+      color: #aaa;
+    }
+  }
+
   h3 {
     line-height: 1.2em;
     font-size: 2em;
@@ -36,17 +51,6 @@ $border: 0 0 0px 1px #0000000e;
   .card-mar {
     padding: 35px;
   }
-
-  // .mat-card-content {
-  //   span {
-  //     h1,
-  //     h2,
-  //     h3 {
-  //       margin: 15px 0;
-  //       font-weight: 700;
-  //     }
-  //   }
-  // }
 }
 
 ol,

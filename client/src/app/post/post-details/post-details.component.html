@@ -4,10 +4,15 @@
   </div>
   <p class="backtopost" [routerLink]="['/post']">Back to post</p>
   <mat-card class="card">
+    <mat-card-header>
+      <h4><span>Author</span> {{ post.postAuthor }}</h4>
+      <p><span>Published</span> {{ post.updated | date: "dd MMM yyyy" }}</p>
+    </mat-card-header>
     <img src="{{ post.postImgUrl }}" alt="{{ post.postTitle }}" />
     <div class="card-mar">
       <mat-card-content>
         <h3>{{ post.postTitle }}</h3>
+        <mat-card-subtitle>{{ post.postDesc }}</mat-card-subtitle>
         <span [innerHTML]="post.postContent"></span>
       </mat-card-content>
 

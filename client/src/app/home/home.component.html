@@ -3,19 +3,21 @@
     <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
   </span>
   <div class="unpcard-wrapper">
-    <div class="unpcard" *ngFor="let post of posts">
-      <div class="unpcard-header">
-        <img src="{{ post.postImgUrl }}" alt="Photo of a Shiba Inu" />
-      </div>
-      <div class="unpcard-content">
-        <small>Published: {{ post.updated | date }}</small>
-        <h3>{{ post.postTitle }}</h3>
-        <p>Author: {{ post.postAuthor }}</p>
-      </div>
-      <div class="unpcard-action">
-        <i class="fas fa-heart"></i>
-        <i [routerLink]="['/details/', post._id]" class="fas fa-eye"></i>
-      </div>
-    </div>
+    <mat-card class="unpcard" *ngFor="let post of posts">
+      <span [routerLink]="['/details/', post._id]">
+        <mat-card-header>
+          <mat-card-header class="unpcard-header">
+            <h4><span>Author</span> {{ post.postAuthor }}</h4>
+            <p>
+              <span>Published</span> {{ post.updated | date: "dd MMM yyyy" }}
+            </p>
+          </mat-card-header>
+        </mat-card-header>
+        <img src="{{ post.postImgUrl }}" alt="Post Image" />
+        <mat-card-content class="unpcard-content">
+          <h3>{{ post.postTitle }}</h3>
+        </mat-card-content>
+      </span>
+    </mat-card>
   </div>
 </div>

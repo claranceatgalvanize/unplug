@@ -21,29 +21,10 @@
           <i class="fas fa-sign-in-alt"></i>
         </button>
       </div>
-      <button
-        mat-button
-        *ngIf="loginStatus === true"
-        [matMenuTriggerFor]="menu"
-      >
-        Menu
+      <button mat-button *ngIf="loginStatus === true" [routerLink]="['/post']">
+        Post
       </button>
     </div>
-    <mat-menu #menu="matMenu">
-      <div *ngIf="loginStatus === false">
-        <button
-          mat-menu-item
-          *ngFor="let cat of categories"
-          [routerLink]="['/bycategory/', cat._id]"
-        >
-          {{ cat.catName }}
-        </button>
-      </div>
-      <div *ngIf="loginStatus === true">
-        <button mat-menu-item [routerLink]="['/category']">Category</button>
-        <button mat-menu-item [routerLink]="['/post']">Post</button>
-      </div>
-    </mat-menu>
   </div>
 </header>
 <main>

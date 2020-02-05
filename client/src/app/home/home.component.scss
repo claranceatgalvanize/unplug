@@ -1,6 +1,6 @@
 $border: 0 0 0px 1px #0000001f;
 $gray: #a9a9a9;
-$paddingValue: 15px 35px;
+$paddingValue: 35px;
 
 .loading-shade {
   position: absolute;
@@ -18,21 +18,34 @@ $paddingValue: 15px 35px;
 }
 
 .unpcard {
-  line-height: 2.2em;
   box-shadow: $border;
   border-radius: 0px;
   margin-bottom: 35px;
   overflow: hidden;
 
+  span:focus {
+    outline: none;
+  }
+
   &:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
   }
+  img {
+    width: 100%;
+  }
+  .mat-card-header {
+    align-items: baseline;
 
-  .unpcard-header {
-    overflow: hidden;
-
-    img {
-      width: 100%;
+    h4,
+    p {
+      font-weight: 700;
+    }
+    p {
+      margin-left: 35px;
+    }
+    span {
+      font-size: 0.5em;
+      color: #aaa;
     }
   }
 
