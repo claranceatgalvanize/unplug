@@ -4,7 +4,7 @@ import { Observable, of } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
 import { Category } from "../models/category";
 
-const apiUrl = "http://localhost:3000/api/category/";
+const apiUrl = "/api/category/";
 
 @Injectable({
   providedIn: "root"

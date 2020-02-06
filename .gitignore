@@ -4,10 +4,10 @@
 **/dist
 **/tmp
 **/out-tsc
+server/public
 
 # dependencies
 **/node_modules
-!client/node_modules
 node_modules
 # IDEs and editors
 **/.idea
