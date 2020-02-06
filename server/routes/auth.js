@@ -1,10 +1,11 @@
 const passport = require("passport"),
-  config = require("../config/settings"),
+  path = require("path"),
   express = require("express"),
   jwt = require("jsonwebtoken"),
   router = express.Router(),
-  User = require("../models/user");
-require("../config/passport")(passport);
+  config = require(path.join(__dirname, "..", "config/", "settings")),
+  User = require(path.join(__dirname, "..", "models/", "user"));
+require(path.join(__dirname, "..", "config/", "passport"))(passport);
 
 router.post("/register", (req, res) => {
   if (!req.body.fullName || !req.body.username || !req.body.password) {

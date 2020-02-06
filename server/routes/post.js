@@ -1,8 +1,9 @@
-const passport = require("passport"),
+const path = require("path"),
+  passport = require("passport"),
   express = require("express"),
   router = express.Router(),
-  Post = require("../models/post");
-require("../config/passport")(passport);
+  Post = require(path.join(__dirname, "..", "models/", "post"));
+require(path.join(__dirname, "..", "config/", "passport"))(passport);
 
 router.get(
   "/",

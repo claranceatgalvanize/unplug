@@ -1,7 +1,8 @@
-const express = require("express");
-const router = express.Router();
-var Category = require("../models/category");
-var Post = require("../models/post");
+const express = require("express"),
+  path = require("path"),
+  router = express.Router(),
+  Category = require(path.join(__dirname, "..", "models/", "category")),
+  Post = require(path.join(__dirname, "..", "models/", "post"));
 
 router.get("/category", (req, res, next) => {
   Category.find((err, categories) => {

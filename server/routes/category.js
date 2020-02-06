@@ -1,8 +1,9 @@
 const passport = require("passport"),
+  path = require("path"),
   express = require("express"),
   router = express.Router(),
-  Category = require("../models/category");
-require("../config/passport")(passport);
+  Category = require(path.join(__dirname, "..", "models/", "category"));
+require(path.join(__dirname, "..", "config/", "passport"))(passport);
 
 router.get(
   "/",
